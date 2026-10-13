@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaDash | Products</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="brand"><span>✦</span> NovaDash</h2>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav active" href="index.html">▦ &nbsp; Dashboard</a>
+      <a class="nav" href="#products">□ &nbsp; Products</a>
+      <a class="nav" href="admin.html">⚙ &nbsp; Admin Panel</a>
+      <div class="sidebar-bottom">
+        <div class="profile-icon">N</div>
+        <div><b>Nova Store</b><small>Product Manager</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="muted">WORKSPACE / OVERVIEW</p>
+          <h2>Dashboard</h2>
+        </div>
+        <div class="top-actions">
+          <button class="btn btn-light" id="themeBtn">☾ Dark mode</button>
+          <a class="btn btn-primary" href="admin.html">＋ Admin Panel</a>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <span class="eyebrow">YOUR STORE AT A GLANCE</span>
+          <h1>Welcome to your dashboard.</h1>
+          <p>Manage your products and keep your store up to date.</p>
+        </div>
+        <div class="welcome-icon">✦</div>
+      </section>
+
+      <section class="stats">
+        <article class="stat-card">
+          <span class="stat-icon purple">▦</span>
+          <p>Total Products</p>
+          <h2 id="totalProducts">0</h2>
+          <small>Products in your store</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon orange">★</span>
+          <p>Average Rating</p>
+          <h2 id="averageRating">0.0 <span class="star">★</span></h2>
+          <small>Out of 5.0 stars</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon green">↗</span>
+          <p>Store Status</p>
+          <h2 class="live-status">● Live</h2>
+          <small>Firestore connection status</small>
+        </article>
+      </section>
+
+      <section class="products-section" id="products">
+        <div class="section-heading">
+          <div>
+            <p class="muted">YOUR CATALOG</p>
+            <h2>Featured Products</h2>
+            <p class="description">Your latest products, synced from Firebase.</p>
+          </div>
+          <a href="admin.html" class="btn btn-primary">＋ Add Product</a>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <div class="empty-state">Connecting to Firebase...</div>
+        </div>
+      </section>
+
+      <footer>© 2026 NovaDash · Built for your store.</footer>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaDash | Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2 class="brand"><span>✦</span> NovaDash</h2>
+      <p class="nav-label">WORKSPACE</p>
+      <a class="nav" href="index.html">▦ &nbsp; Dashboard</a>
+      <a class="nav" href="index.html#products">□ &nbsp; Products</a>
+      <a class="nav active" href="admin.html">⚙ &nbsp; Admin Panel</a>
+      <div class="sidebar-bottom">
+        <div class="profile-icon">A</div>
+        <div><b>Administrator</b><small>Catalog management</small></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="muted">WORKSPACE / MANAGEMENT</p>
+          <h2>Admin Panel</h2>
+        </div>
+        <div class="top-actions">
+          <button class="btn btn-light" id="themeBtn">☾ Dark mode</button>
+          <a class="btn btn-primary" href="index.html">← Dashboard</a>
+        </div>
+      </header>
+
+      <section class="welcome admin-welcome">
+        <div>
+          <span class="eyebrow">CATALOG CONTROL CENTER</span>
+          <h1>Manage your products.</h1>
+          <p>Add new items, update prices and manage product ratings.</p>
+        </div>
+        <div class="welcome-icon">⚙</div>
+      </section>
+
+      <section class="admin-content">
+        <div class="panel form-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="muted">PRODUCT DETAILS</p>
+              <h2 id="formTitle">Add New Product</h2>
+            </div>
+            <span class="stat-icon purple">＋</span>
+          </div>
+
+          <form id="productForm">
+            <label for="productName">Product Name</label>
+            <input id="productName" type="text" placeholder="e.g. Wireless Headphones" required maxlength="100">
+
+            <div class="form-row">
+              <div>
+                <label for="productPrice">Price</label>
+                <input id="productPrice" type="number" min="0" step="0.01" placeholder="99.99" required>
+              </div>
+              <div>
+                <label for="productRating">Rating (0–5)</label>
+                <input id="productRating" type="number" min="0" max="5" step="0.1" placeholder="4.5" required>
+              </div>
+            </div>
+
+            <label for="productLink">Product / Image URL</label>
+            <input id="productLink" type="url" placeholder="https://example.com/product-image.jpg" required>
+
+            <p class="form-note">Enter a direct image URL to display the image. The same URL will be used for the product's Open Product button.</p>
+
+            <div class="form-buttons">
+              <button class="btn btn-primary" id="saveBtn" type="submit">＋ Add Product</button>
+              <button class="btn btn-light hidden" id="cancelEdit" type="button">Cancel</button>
+            </div>
+            <p id="formMessage" class="form-message"></p>
+          </form>
+        </div>
+
+        <div class="panel table-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="muted">YOUR INVENTORY</p>
+              <h2>All Products</h2>
+            </div>
+            <span class="count-badge" id="adminCount">0 items</span>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Rating</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductList">
+                <tr><td colspan="4">Connecting to Firebase...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <footer>© 2026 NovaDash · Admin workspace.</footer>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
